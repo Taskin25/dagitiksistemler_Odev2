@@ -1,0 +1,30 @@
+version: '3'
+services:
+  node1:
+    build: ./mpi_node
+    container_name: distributed-mpi-openmp-node1
+    hostname: node1
+    networks:
+      - mpi_network
+  node2:
+    build: ./mpi_node
+    container_name: distributed-mpi-openmp-node2
+    hostname: node2
+    networks:
+      - mpi_network
+  node3:
+    build: ./mpi_node
+    container_name: distributed-mpi-openmp-node3
+    hostname: node3
+    networks:
+      - mpi_network
+  node4:
+    build: ./mpi_node
+    container_name: distributed-mpi-openmp-node4
+    hostname: node4
+    networks:
+      - mpi_network
+
+networks:
+  mpi_network:
+    driver: bridge
